@@ -1,0 +1,2 @@
+# Emacs config
+[emacs.json](./emacs.json) is placed in `~/.config/karabiner/assets/complex_modifications/`. When the Emacs app is running, it switches the left ctrl and  ⌘ keys and assigns ⌥/alt to the right ⌘ key.

@@ -1,0 +1,80 @@
+{
+  "title": "Emacs Keys",
+  "rules": [
+    {
+      "description": "Left Command to Left Control (Emacs)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_gui"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "left_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Right Command to Left Alt (Emacs)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_gui"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "left_alt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Left Control to Left Command (Emacs)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_control"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "left_gui"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
