@@ -7,7 +7,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "left_gui"
+            "key_code": "left_gui",
+            "modifiers": {
+              "optional": ["any"]
+            }
           },
           "conditions": [
             {
@@ -19,7 +22,6 @@
           ],
           "to": [
             {
-              "repeat": true,
               "key_code": "left_control"
             }
           ]
@@ -32,7 +34,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "right_gui"
+            "key_code": "right_gui",
+            "modifiers": {
+              "optional": ["any"]
+            }
           },
           "conditions": [
             {
@@ -44,7 +49,6 @@
           ],
           "to": [
             {
-              "repeat": true,
               "key_code": "left_alt"
             }
           ]
@@ -57,7 +61,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "left_control"
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": ["any"]
+            }
           },
           "conditions": [
             {
@@ -69,7 +76,6 @@
           ],
           "to": [
             {
-              "repeat": true,
               "key_code": "left_gui"
             }
           ]
