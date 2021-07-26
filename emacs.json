@@ -2,62 +2,76 @@
   "title": "Emacs Keys",
   "rules": [
     {
-      "description": "Left Command to Left Control (Emacs)",
+      "description": "Emacs macOS keymap",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "left_gui",
+            "key_code": "tab",
             "modifiers": {
-              "optional": ["any"]
+              "mandatory": ["left_control"]
             }
           },
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.gnu\\.Emacs$"
-              ]
-            }
-          ],
-          "to": [
-            {
-              "key_code": "left_control"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Right Command to Left Alt (Emacs)",
-      "manipulators": [
+          "to": [{
+            "key_code": "tab",
+            "modifiers": ["left_command"]
+          }],
+          "conditions": [{
+            "type": "frontmost_application_if",
+            "bundle_identifiers": ["^org\\.gnu\\.Emacs$"]
+          }]
+        },
         {
           "type": "basic",
           "from": {
-            "key_code": "right_gui",
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["left_command"]
+            }
+          },
+          "to": [{
+            "key_code": "tab",
+            "modifiers": ["left_control"]
+          }],
+          "conditions": [{
+            "type": "frontmost_application_if",
+            "bundle_identifiers": ["^org\\.gnu\\.Emacs$"]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
             "modifiers": {
               "optional": ["any"]
             }
           },
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.gnu\\.Emacs$"
-              ]
+          "to": [{
+            "key_code": "left_control"
+          }],
+          "conditions": [{
+            "type": "frontmost_application_if",
+            "bundle_identifiers": ["^org\\.gnu\\.Emacs$"]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": ["any"]
             }
-          ],
-          "to": [
-            {
-              "key_code": "left_alt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Left Control to Left Command (Emacs)",
-      "manipulators": [
+          },
+          "to": [{
+            "key_code": "left_alt"
+          }],
+          "conditions": [{
+            "type": "frontmost_application_if",
+            "bundle_identifiers": [
+              "^org\\.gnu\\.Emacs$"
+            ]
+          }]
+        },
         {
           "type": "basic",
           "from": {
@@ -66,6 +80,11 @@
               "optional": ["any"]
             }
           },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
           "conditions": [
             {
               "type": "frontmost_application_if",
@@ -73,10 +92,27 @@
                 "^org\\.gnu\\.Emacs$"
               ]
             }
-          ],
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
           "to": [
             {
-              "key_code": "left_gui"
+              "key_code": "left_control"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
             }
           ]
         }

@@ -15,6 +15,7 @@
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \usepackage{dirtytalk}
 #+LATEX_HEADER: \newcommand{\E}{\mathbb{E}}
 #+LATEX_HEADER: \newcommand{\Cov}{\mathrm{Cov}}
 #+LATEX_HEADER: \newcommand{\proj}{\mathrm{proj}}

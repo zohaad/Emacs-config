@@ -58,7 +58,7 @@ located.")
 
 ; auto-complete
 (use-package company
-  :init (add-hook 'after-init-hook 'global-company-mode))
+  :config (add-hook 'after-init-hook 'global-company-mode))
 
 ; macOS specific
 (use-package exec-path-from-shell
