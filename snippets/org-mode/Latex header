@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: Latex header
+# key: <lh
+# --
+:DISPLAY_OPTIONS:
+# by default, disable LaTeX style subscripting in regular text
+#+OPTIONS: ^:nil
+
+# LaTeX header options for nicely styled output
+#+LATEX_HEADER: \usepackage[a4paper,margin=2.5cm]{geometry}
+#+LATEX_HEADER_EXTRA: \usepackage{parskip}
+
+# LaTeX header for math
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \newcommand{\E}{\mathbb{E}}
+#+LATEX_HEADER: \newcommand{\Cov}{\mathrm{Cov}}
+#+LATEX_HEADER: \newcommand{\proj}{\mathrm{proj}}
+#+LATEX_HEADER: \newcommand{\indep}{{\perp\!\!\!\perp}}
+:END:
+#+TITLE: $1
+#+SUBTITLE: $2
+#+AUTHOR: $3
+#+DATE: {{{time(%Y-%m-%d)}}}
+#+EMAIL: $4
+
+$0

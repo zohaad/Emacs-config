@@ -63,3 +63,10 @@ located.")
 ; macOS specific
 (use-package exec-path-from-shell
   :init (exec-path-from-shell-initialize))
+
+(use-package yasnippet)
+(setq yas-snippet-dirs
+      (list (concat (file-name-as-directory user-emacs-directory)
+		    "snippets")))
+(yas-global-mode 1)
+(setq yas-triggers-in-field t) ; allow nested snippets
