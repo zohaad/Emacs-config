@@ -1,12 +1,12 @@
 # Emacs config
-## Quick setup
-Clone this repository and:
-
-`ln -s ./emacs.json ~/.config/karabiner/assets/complex_modifications/emacs.json`
-
-`ln -s ./init.el ~/.config/emacs/init.el`
 ## Key mapping
-Place [emacs.json](./emacs.json) in `~/.config/karabiner/assets/complex_modifications/`. Open [Karabiner-Elements](https://karabiner-elements.pqrs.org/) and in the Complex modifications tab click on "Add rule", then click on "Enable All" at the top. This switches the left ctrl and ⌘ keys and assigns left ⌥/alt to the right ⌘ key. [[1]](#1)
+Karabiner config based on [[1]](#1).
+
+- `left_command → left_control`
+- `left_control → left_command`
+- `right_command → left_alt`
+- `caps_lock → left_control`
+- `left_command + tab` is ignored
 
 ## macOS quirks
 In `System Preferences → Security & Privacy → Privacy` choose `Full Disk Access` in the left column, then add `/usr/bin/ruby`.[[2]](#2) (Press ⌘-Shift-dot to show hidden files)
