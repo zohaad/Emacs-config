@@ -3,19 +3,31 @@
 # key: <lh
 # --
 :DISPLAY_OPTIONS:
-# by default, disable LaTeX style subscripting in regular text
-#+OPTIONS: ^:nil
-
+#+OPTIONS: ^:nil toc:nil ':t
+#+BEGIN_EXPORT latex
+\clearpage
+#+END_EXPORT
 # LaTeX header options for nicely styled output
-#+LATEX_HEADER: \usepackage[a4paper,margin=2.5cm]{geometry}
+#+LATEX_CLASS: acmart
+#+LATEX_CLASS_OPTIONS: [format=acmsmall, review=false]
+#+LATEX_HEADER: \usepackage{acm-ec-21}
 #+LATEX_HEADER_EXTRA: \usepackage{parskip}
-
+#+LATEX_HEADER_EXTRA: \numberwithin{equation}{section}
+#+LATEX_HEADER: \usepackage{dirtytalk}
+#+LATEX_HEADER: \usepackage[ruled]{algorithm2e}
+#+LATEX_HEADER: \renewcommand{\algorithmcfname}{ALGORITHM}
+#+LATEX_HEADER: \usepackage{cleveref}
+#+LATEX_HEADER_EXTRA: \SetAlFnt{\small}
+#+LATEX_HEADER_EXTRA: \SetAlCapFnt{\small}
+#+LATEX_HEADER_EXTRA: \SetAlCapNameFnt{\small}
+#+LATEX_HEADER_EXTRA: \SetAlCapHSkip{0pt}
+#+LATEX_HEADER_EXTRA: \parindent0mm
+#+LATEX_HEADER_EXTRA: \IncMargin{-\parindent}
 # LaTeX header for math
 #+LATEX_HEADER: \usepackage{mathtools}
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage{subcaption}
-#+LATEX_HEADER: \usepackage{dirtytalk}
 #+LATEX_HEADER: \newcommand{\E}{\mathbb{E}}
 #+LATEX_HEADER: \newcommand{\Cov}{\mathrm{Cov}}
 #+LATEX_HEADER: \newcommand{\proj}{\mathrm{proj}}
@@ -26,5 +38,4 @@
 #+AUTHOR: $3
 #+DATE: {{{time(%Y-%m-%d)}}}
 #+EMAIL: $4
-
 $0

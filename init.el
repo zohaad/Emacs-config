@@ -37,6 +37,8 @@ located.")
 (use-package ayu-theme
   :config (load-theme 'ayu-light t))
 
+(setq vc-follow-symlinks t)
+
 ; different fonts for text and code
 (setq @code-font "Menlo")
 (setq @text-font "Fira Code")
@@ -70,3 +72,36 @@ located.")
 		    "snippets")))
 (yas-global-mode 1)
 (setq yas-triggers-in-field t) ; allow nested snippets
+
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+	       '("acmart"
+		 "\\documentclass{acmart}"
+		 ("\\section{%s}" . "\\section*{%s}")
+		 ("\\subsection{%s}" . "\\subsection*{%s}")
+		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+
+(setq org-latex-logfiles-extensions
+      (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl")))
+
+
+; screen centering
+; from: https://christiantietze.de/posts/2021/06/emacs-center-window-single-function/
+(defun @frame-recenter (&optional frame)
+  "Center FRAME on the screen.
+FRAME can be a frame name, a terminal name, or a frame.
+If FRAME is omitted or nil, use currently selected frame."
+  (interactive)
+  (unless (eq 'maximised (frame-parameter nil 'fullscreen))
+    (let* ((frame (or (and (boundp 'frame) frame) (selected-frame)))
+            (frame-w (frame-pixel-width frame))
+            (frame-h (frame-pixel-height frame))
+            ;; frame-monitor-workarea returns (x y width height) for the monitor
+            (monitor-w (nth 2 (frame-monitor-workarea frame)))
+            (monitor-h (nth 3 (frame-monitor-workarea frame)))
+            (center (list (/ (- monitor-w frame-w) 2)
+                          (/ (- monitor-h frame-h) 2))))
+      (apply 'set-frame-position (flatten-list (list frame center))))))
+
+(add-hook 'after-init-hook #'@frame-recenter)
+(add-hook 'after-make-frame-functions #'@frame-recenter)
