@@ -1,12 +1,5 @@
-# -*- mode: snippet -*-
-# name: Latex header
-# key: <lh
-# --
 :DISPLAY_OPTIONS:
 #+OPTIONS: ^:nil toc:nil ':t
-#+BEGIN_EXPORT latex
-\clearpage
-#+END_EXPORT
 # LaTeX header options for nicely styled output
 #+LATEX_CLASS: acmart
 #+LATEX_CLASS_OPTIONS: [format=acmsmall, review=false]
@@ -33,9 +26,3 @@
 #+LATEX_HEADER: \newcommand{\proj}{\mathrm{proj}}
 #+LATEX_HEADER: \newcommand{\indep}{{\perp\!\!\!\perp}}
 :END:
-#+TITLE: $1
-#+SUBTITLE: $2
-#+AUTHOR: $3
-#+DATE: {{{time(%Y-%m-%d)}}}
-#+EMAIL: $4
-$0
