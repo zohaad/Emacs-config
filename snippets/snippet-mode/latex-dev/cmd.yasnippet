@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: cmd
+# group: dev
+# name: \begin{...} ... \end{...}
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+\`(if (@org-in-export-block) "\\\\begin{$1}" "#+BEGIN_EXPORT latex\n\\\\begin{$1}")\`
+  \$1
+\`(if (@org-in-export-block) "\\\\end{$1}" "\\\\end{$1}\n#+END_EXPORT")\`

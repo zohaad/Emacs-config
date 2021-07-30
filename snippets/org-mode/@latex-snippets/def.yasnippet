@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: def
+# group: math
+# name: \begin{definition} ... \end{definition}
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+`(if (@org-in-export-block) "\\begin{definition}" "#+BEGIN_EXPORT latex\n\\begin{definition}")`[$1]
+  $2
+`(if (@org-in-export-block) "\\end{definition}" "\\end{definition}\n#+END_EXPORT")`

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: eq
+# group: math
+# name: \begin{equation} ... \end{equation}
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+`(if (@org-in-export-block) "\\begin{equation}" "#+BEGIN_EXPORT latex\n\\begin{equation}")`
+  $1
+`(if (@org-in-export-block) "\\end{equation}" "\\end{equation}\n#+END_EXPORT")`

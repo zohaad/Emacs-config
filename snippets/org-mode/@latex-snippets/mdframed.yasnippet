@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: mdframed
+# group: math
+# name: \begin{mdframed} ... \end{mdframed}
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+`(if (@org-in-export-block) "\\begin{mdframed}" "#+BEGIN_EXPORT latex\n\\begin{mdframed}")`
+  $1
+`(if (@org-in-export-block) "\\end{mdframed}" "\\end{mdframed}\n#+END_EXPORT")`

@@ -1,5 +1,5 @@
 :DISPLAY_OPTIONS:
-#+OPTIONS: ^:nil toc:nil ':t
+#+OPTIONS: toc:nil ':t
 # LaTeX header options for nicely styled output
 #+LATEX_CLASS: acmart
 #+LATEX_CLASS_OPTIONS: [format=acmsmall, review=false]
@@ -17,10 +17,13 @@
 #+LATEX_HEADER_EXTRA: \parindent0mm
 #+LATEX_HEADER_EXTRA: \IncMargin{-\parindent}
 # LaTeX header for math
+#+LATEX_HEADER: \usepackage{amsmath, amssymb}
 #+LATEX_HEADER: \usepackage{mathtools}
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \usepackage{mdframed}
+#+LATEX_HEADER_EXTRA: \mdfsetup{leftmargin=0.5in, rightmargin=0.5in, skipabove=0.3in, skipbelow=0.3in, innertopmargin=10pt, innerbottommargin=10pt}
 #+LATEX_HEADER: \newcommand{\E}{\mathbb{E}}
 #+LATEX_HEADER: \newcommand{\Cov}{\mathrm{Cov}}
 #+LATEX_HEADER: \newcommand{\proj}{\mathrm{proj}}

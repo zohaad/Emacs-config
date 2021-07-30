@@ -4,6 +4,6 @@
 # group: environments
 # name : \begin{aligned} ... \end{aligned}
 # --
-\begin{align}
-  $0
-\end{align}
+`(if (@org-in-export-block) "\\begin{aligned}" "#+BEGIN_EXPORT latex\n\\begin{aligned}")`
+  $1
+`(if (@org-in-export-block) "\\end{aligned}" "\\end{aligned}\n#+END_EXPORT")`

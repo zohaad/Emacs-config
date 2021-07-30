@@ -29,6 +29,7 @@ located.")
       auto-save-interval 20)
 (setq auto-save-default t) ; autosave every buffer that visits a file
 (setq create-lockfiles nil) ; disable lockfiles
+(setq make-backup-files nil) ; disable ~ files 
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -41,7 +42,7 @@ located.")
 
 ; different fonts for text and code
 (setq @code-font "Menlo")
-(setq @text-font "Fira Code")
+(setq @text-font "Iosevka Extended")
 (setq @font-height 160)
 
 (set-face-attribute 'default nil :family @code-font :height @font-height)
@@ -110,3 +111,7 @@ located.")
 
 ;; (add-hook 'after-init-hook #'@frame-recenter)
 ;; (add-hook 'after-make-frame-functions #'@frame-recenter)
+
+(defun @org-in-export-block ()
+  "Checks if in export block. Returns t or nil."
+  (if (org-in-block-p (list "EXPORT")) t))
